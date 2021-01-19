@@ -1,6 +1,7 @@
 import java.util.*;
 import java.lang.Math.*;
-class Exam1{
+
+public class Exam1{
 	public static void main(String[] args){
 		/*Develop a collection of four different rules
 		for generating the terms of a sequence.
@@ -68,7 +69,7 @@ class Exam1{
 
                 System.out.println(baseNumber + ", " + numOne + ", " + numTwo + ", " +
                                         numThree + ", ?");
-                System.out.print("What is the fifth number in the sequence?: ");
+                System.out.print("What is the fifth number in this Geometric sequence?: ");
                 guess = input.nextDouble();
 
 		if(guess == numFour){
@@ -77,9 +78,6 @@ class Exam1{
 		else{
 			System.out.println("Sorry, but the correct answer is " + numFour);
 		}
-
-		System.out.println("Geo");
-
 	}
 
 	public static void arithmeticRule(Scanner input){
@@ -108,7 +106,7 @@ class Exam1{
 
 		System.out.println(baseNumber + ", " + numOne + ", " + numTwo + ", " +
 					numThree + ", ?");
-		System.out.print("What is the fifth number in the sequence?: ");
+		System.out.print("What is the fifth number in this Arithmetic sequence?: ");
 		guess = input.nextInt();
 
 		if(guess == numFour){
@@ -117,9 +115,6 @@ class Exam1{
 		else{
 			System.out.println("Sorry, but the correct answer is " + numFour);
 		}
-
-		System.out.println("Ari");
-
 	}
 
 	public static void recurrenceRule(Scanner input){
@@ -157,7 +152,7 @@ class Exam1{
 
 		System.out.println(baseNumber + ", " + numOne + ", " + numTwo + ", " +
 					numThree + ", ?");
-		System.out.print("What is the fifth number in the sequence?: ");
+		System.out.print("What is the fifth number in this Recurrence sequence?: ");
 		guess = input.nextInt();
 
 		if(guess == numFour){
@@ -166,9 +161,6 @@ class Exam1{
 		else{
 			System.out.println("Sorry, but the correct answer is " + numFour);
 		}
-
-
-		System.out.println("Rec");
 	}
 
 	public static void fibonnacciRule(Scanner input){
