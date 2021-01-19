@@ -30,7 +30,7 @@ public class Exam1{
 			break;
                 case 3: recurrenceRule(input);
 			break;
-                case 4: fibonnacciRule(input);
+                case 4: fibonacciRule(input);
 			break;
 		}
 	}
@@ -163,10 +163,10 @@ public class Exam1{
 		}
 	}
 
-	public static void fibonnacciRule(Scanner input){
-		//Fibonnacci
+	public static void fibonacciRule(Scanner input){
+		//Fibonacci
 
-		/*The fibonnacci sequence, f_0, f_1, f_2, ...,
+		/*The fibonacci sequence, f_0, f_1, f_2, ...,
 		is defined bt the initial condition f_0 = 0, f_1 = 1,
 		and the recurrence relation
 
@@ -174,7 +174,30 @@ public class Exam1{
 
 		for n = 2, 3, 4
 		*/
+		int guess;
 
-		System.out.println("Fib");
+		int[] fibonacci = new int[50];
+		fibonacci[0] = 0;
+		fibonacci[1] = 1;
+
+		for(int i = 2; i <= 49; i++){
+			fibonacci[i] = fibonacci[i-1] + fibonacci[i-2];
+		}
+
+		int initialNumber = (int)(Math.random()*45);
+
+		for(int i = initialNumber; i <= initialNumber+3; i++){
+			System.out.print(fibonacci[i] + ", ");
+		}
+		System.out.println("?");
+
+		System.out.print("What is the fifth number in this fibonacci sequence?: ");
+		guess = input.nextInt();
+
+		if(guess == fibonacci[initialNumber+4]){
+			System.out.println("Right! The fifth number is " + fibonacci[initialNumber+4]);
+		}
+		else
+			System.out.println("Sorry, but the right answer is " + fibonacci[initialNumber+4]);
 	}
 }
