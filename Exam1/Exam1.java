@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Exam1{
 	public static void main(String[] args){
 		/*Develop a collection of four different rules
@@ -11,6 +13,8 @@ class Exam1{
 
 		Tell them if they were correct or not.
 		*/
+		Scanner input = new Scanner(System.in);
+
 		int ruleChoice;
 		System.out.println("Hello");
 
@@ -21,7 +25,7 @@ class Exam1{
 		switch(ruleChoice){
 		case 1: geometricRule();
 			break;
-                case 2: arithmeticRule();
+                case 2: arithmeticRule(input);
 			break;
                 case 3: recurrenceRule();
 			break;
@@ -41,7 +45,7 @@ class Exam1{
 
 	}
 
-	public static void arithmeticRule(){
+	public static void arithmeticRule(Scanner input){
 		//Arithmetic
 
                 /*Sequence in the form:
@@ -49,7 +53,35 @@ class Exam1{
                 Where a and d are real numbers
                 */
 
+		int guess;
+		int baseNumber;
+		int incrementNumber;
+		int numOne;
+		int numTwo;
+		int numThree;
+		int numFour;
+
+		baseNumber = (int)(Math.random()*100);
+		incrementNumber = (int)(Math.random()*20 +1);
+
+		numOne = baseNumber + incrementNumber;
+		numTwo = numOne + incrementNumber;
+		numThree = numTwo + incrementNumber;
+		numFour = numThree + incrementNumber;
+
+		System.out.println(baseNumber + ", " + numOne + ", " + numTwo + ", " +
+					numThree + ", ?");
+		System.out.print("What is the fifth number in the sequence?: ");
+		guess = input.nextInt();
+
+		if(guess == numFour){
+			System.out.println("Right! The fifth number is " + numFour);
+		}
+		else{
+			System.out.println("Sorry, but the correct answer is " + numFour);
+		}
 		System.out.println("Ari");
+
 	}
 
 	public static void recurrenceRule(){
