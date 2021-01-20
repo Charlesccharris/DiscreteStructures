@@ -16,61 +16,28 @@ public class Exam1{
 		*/
 		Scanner input = new Scanner(System.in);
 
+		int guess;
+		int numFour = 0;
 		int ruleChoice;
 		System.out.println("Hello");
 
 		ruleChoice = (int)(Math.random()*4 +1);
 
-		System.out.println(ruleChoice);
+//		System.out.println(ruleChoice);
 
 		switch(ruleChoice){
-		case 1: geometricRule(input);
+		case 1: numFour = geometricRule();
 			break;
-                case 2: arithmeticRule(input);
+                case 2: numFour = arithmeticRule();
 			break;
-                case 3: recurrenceRule(input);
+                case 3: numFour = recurrenceRule();
 			break;
-                case 4: fibonacciRule(input);
+                case 4: numFour = fibonacciRule();
 			break;
 		}
-	}
 
-	public static void geometricRule(Scanner input){
-		//Geometric
-
-		/*Sequence in the form:
-		a, ar, ar^2, ..., ar^n, ...
-		Where a and r are real numbers
-		*/
-
-		double guess;
-		int baseNumber;
-		int incrementNumber;
-		double middleNumber;
-		double numOne;
-		double numTwo;
-		double numThree;
-		double numFour;
-
-		baseNumber = (int)(Math.random()*10 +1);
-		incrementNumber = (int)(Math.random()*10 +1);
-
-		middleNumber = Math.pow(incrementNumber, 1);
-		numOne = baseNumber*middleNumber;
-
-		middleNumber = Math.pow(incrementNumber, 2);
-		numTwo = baseNumber*middleNumber;
-
-		middleNumber = Math.pow(incrementNumber, 3);
-		numThree = baseNumber*middleNumber;
-
-		middleNumber = Math.pow(incrementNumber, 4);
-		numFour = baseNumber*middleNumber;
-
-                System.out.println(baseNumber + ", " + numOne + ", " + numTwo + ", " +
-                                        numThree + ", ?");
-                System.out.print("What is the fifth number in this Geometric sequence?: ");
-                guess = input.nextDouble();
+		System.out.print("What is the fifth number in this sequence?: ");
+		guess = input.nextInt();
 
 		if(guess == numFour){
 			System.out.println("Right! The fifth number is " + numFour);
@@ -80,7 +47,37 @@ public class Exam1{
 		}
 	}
 
-	public static void arithmeticRule(Scanner input){
+	public static int geometricRule(){
+		//Geometric
+
+		/*Sequence in the form:
+		a, ar, ar^2, ..., ar^n, ...
+		Where a and r are real numbers
+		*/
+
+		int baseNumber;
+		int incrementNumber;
+		int middleNumber;
+		int newNumber;
+		int numFour;
+
+		baseNumber = (int)(Math.random()*10 +1);
+		incrementNumber = (int)(Math.random()*10 +1);
+
+		for(int i = 0; i < 4; i++){
+			middleNumber = (int)(Math.pow(incrementNumber, i));
+			newNumber = middleNumber*baseNumber;
+			System.out.print(newNumber + ", ");
+		}
+
+		System.out.println("?");
+		middleNumber = (int)(Math.pow(incrementNumber, 4));
+		numFour = middleNumber*baseNumber;
+
+		return numFour;
+	}
+
+	public static int arithmeticRule(){
 		//Arithmetic
 
                 /*Sequence in the form:
@@ -88,7 +85,6 @@ public class Exam1{
                 Where a and d are real numbers
                 */
 
-		int guess;
 		int baseNumber;
 		int incrementNumber;
 		int numOne;
@@ -106,18 +102,11 @@ public class Exam1{
 
 		System.out.println(baseNumber + ", " + numOne + ", " + numTwo + ", " +
 					numThree + ", ?");
-		System.out.print("What is the fifth number in this Arithmetic sequence?: ");
-		guess = input.nextInt();
 
-		if(guess == numFour){
-			System.out.println("Right! The fifth number is " + numFour);
-		}
-		else{
-			System.out.println("Sorry, but the correct answer is " + numFour);
-		}
+		return numFour;
 	}
 
-	public static void recurrenceRule(Scanner input){
+	public static int recurrenceRule(){
 		//Recurrence
 
                 /*A recurrence relation for the sequence
@@ -132,7 +121,6 @@ public class Exam1{
                 (A recurrence relation is said to recursively define a sequence)
 		*/
 
-		int guess;
 		int baseNumber;
 		int numOne;
 		int numTwo;
@@ -152,18 +140,10 @@ public class Exam1{
 
 		System.out.println(baseNumber + ", " + numOne + ", " + numTwo + ", " +
 					numThree + ", ?");
-		System.out.print("What is the fifth number in this Recurrence sequence?: ");
-		guess = input.nextInt();
-
-		if(guess == numFour){
-			System.out.println("Right! The fifth number is " + numFour);
-		}
-		else{
-			System.out.println("Sorry, but the correct answer is " + numFour);
-		}
+		return numFour;
 	}
 
-	public static void fibonacciRule(Scanner input){
+	public static int fibonacciRule(){
 		//Fibonacci
 
 		/*The fibonacci sequence, f_0, f_1, f_2, ...,
@@ -174,8 +154,7 @@ public class Exam1{
 
 		for n = 2, 3, 4
 		*/
-		int guess;
-
+		int numFour;
 		int[] fibonacci = new int[50];
 		fibonacci[0] = 0;
 		fibonacci[1] = 1;
@@ -191,13 +170,7 @@ public class Exam1{
 		}
 		System.out.println("?");
 
-		System.out.print("What is the fifth number in this fibonacci sequence?: ");
-		guess = input.nextInt();
-
-		if(guess == fibonacci[initialNumber+4]){
-			System.out.println("Right! The fifth number is " + fibonacci[initialNumber+4]);
-		}
-		else
-			System.out.println("Sorry, but the right answer is " + fibonacci[initialNumber+4]);
+		numFour = fibonacci[initialNumber+4];
+		return numFour;
 	}
 }
