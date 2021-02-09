@@ -11,15 +11,18 @@ secondsInMinute = 60
 minutesInHour = 60
 
 kilometers = miles*kilometersPerMile
-kilometers = round(kilometers, 2)
+#kilometers = round(kilometers, 2)
+#print(kilometers)
 
 minutes += (seconds/secondsInMinute)
-minutes = round(minutes, 2)
+#minutes = round(minutes, 2)
+#print(minutes)
 
 hours += (minutes/minutesInHour)
-hours = round(hours, 2
+#hours = round(hours, 2)
+#print(hours)
 
-variable = kilometers/hours
-
-print("What is the average speed in kilometers per hour, if you go 24 miles in 1 hour, 40 minutes, and 35 seconds?")
+kph = kilometers/hours
+kph = round(kph, 2)
+print ("What is the average speed in kilometers per hour, if you go 24 miles in 1 hour, 40 minutes, and 35 seconds?")
 print(kph)
