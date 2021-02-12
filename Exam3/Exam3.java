@@ -8,10 +8,10 @@ class Exam3{
 		where x is a positive integer.
 */
 		int count = 0;
-		int maxAmount = 10;
+		int maxAmount = 1_000_000;
 
-		for(i = 2; i < maxAmount; i++){
-			if(isPrime(maxAmount)){
+		for(int i = 2; i < maxAmount; i++){
+			if(isPrime(i)){
 				count++;
 			}
 		}
@@ -19,13 +19,13 @@ class Exam3{
 	}
 
 	public static boolean isPrime (int max){
-		System.out.println("In isPrime");
 		for(int i = 2; i < max; i++){
 			if(max%i == 0){
-				System.out.println("Max :" + max + " and i: " + i);
 				return false;
 			}
 		}
 		return true;
 	}
 }
+
+
