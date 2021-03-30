@@ -3,21 +3,14 @@ class Exam7{
 	public static void main(String[] args){
 /*		Write a program to find as many prime Fibonacci numbers as you can.
 		Bonus points will be given for the largest lists.*/
-
-		//Variables
-
-		//Fibonacci Sequence
-
-		//Find prime
 		fibonacciSequence();
 	}
-
 	public static void fibonacciSequence(){
 		long one = 0;
 		long two = 1;
-		long three;
+		long three = 1;
 		boolean isPrime = true;
-		while(true){
+		while(three >= 1){
 			three = one + two;
 			one = two;
 			two = three;
@@ -25,10 +18,6 @@ class Exam7{
 			if(isPrime){
 				System.out.println(three + " is prime");
 			}
-/*			else{
-				System.out.println(three + " is not prime");
-			}
-*/
 		}
 	}
 
