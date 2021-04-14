@@ -15,47 +15,60 @@ class Exam8{
 		int[] list = new int[number];
 
 		list = fillArray(list,number);
-		displayArray(list, number);
+//		displayArray(list, number);
 
-		opNumber = bubbleSort(list, number);
-		opNumber = quickSort(list);
+		bubbleSort(list, number);
+		quickSort(list);
 	}
 
 	public static int[] fillArray(int[] list, int number){
 		for(int x = 0; x < number; x ++){
-			list[x] = (int)(Math.random()*100);
+			list[x] = (int)(Math.random()*1_000_000);
 		}
 		return list;
 	}
 
 	public static void displayArray(int[] list, int number){
 		for(int x = 0; x < number; x ++){
-			System.out.println(list[x]);
+			System.out.print(list[x] + ", ");
 		}
+		System.out.println();
 	}
 
-	public static int bubbleSort(int[] list, int number){
-		int num = 0;
-		int numPos = 0;
-		boolean outOfPosition = true;
-		while(outOfPosition){
-			outOfPosition = false;
-			numPos = 
-			for(int x = 0; x < number; x++){
-				numPos = x;
-				num = list[x];
-				if(list[x] > num){
-					outOfPosition = true;
-					tempPos
-					tempNum
+	public static void bubbleSort(int[] list, int number){
+		int lowest = 0;
+		int position = 0;
+		int tempNum = 0;
+		int assignment = 0;
+		int ifLoop = 0;
+		int forLoop = 0;
+		for(int x = 0; x < number; x++){
+			position = x;
+			lowest = list[x];
+			assignment += 2;
+			for(int y = x; y < number; y++){
+				if(list[y] < lowest){
+					tempNum = list[y];
+					list[y] = lowest;
+					lowest = tempNum;
+					list[x] = lowest;
+					assignment += 4;
+					ifLoop += 1;
 				}
+				forLoop +=1;
 			}
+			forLoop += 1;
 		}
-		displayArray(list, number);
-		return 0;
+//		displayArray(list, number);
+		displayOperations(assignment, ifLoop, forLoop);
 	}
 
-	public static int quickSort(int[] list){
-		return 1;
+	public static void quickSort(int[] list){
+
+	}
+
+	public static void displayOperations(int assignment, int ifLoop, int forLoop){
+		System.out.println("Assignments: " + assignment + ", Ifs: " + ifLoop +
+			", Fors: " + forLoop);
 	}
 }
