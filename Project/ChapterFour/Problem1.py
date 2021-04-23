@@ -1,11 +1,4 @@
-#1. Identify the problem
-#2. Copy and paste the code
-#3. Make sure code works
-#4. Identify what needs to be modified with Strings.
-#5. Make strings for the program
-#6. Check to make sure program works
 #4.10 (Guess birthday)
-
 #Rewrite Listing 4.3, GuessBirthday.java, to prompt the user to enter the character
 #Y for Yes and N for No rather than entering 1 for Yes and 0 for No.
 
@@ -32,7 +25,6 @@ if "y" in answer:
 	day += 1
 
 print("I will guess your birthday based on nine questions.")
-print("First the day.")
 print("Is your birth day in this set of numbers?")
 print(set2)
 answer = input("Enter (Y)es or (N)o: ")
@@ -41,7 +33,6 @@ if "y" in answer:
 	day += 2
 
 print("I will guess your birthday based on nine questions.")
-print("First the day.")
 print("Is your birth day in this set of numbers?")
 print(set3)
 answer = input("Enter (Y)es or (N)o: ")
@@ -49,7 +40,6 @@ answer = input("Enter (Y)es or (N)o: ")
 if "y" in answer:
 	day += 4
 print("I will guess your birthday based on nine questions.")
-print("First the day.")
 print("Is your birth day in this set of numbers?")
 print(set4)
 answer = input("Enter (Y)es or (N)o: ")
@@ -58,7 +48,6 @@ if "y" in answer:
 	day += 8
 
 print("I will guess your birthday based on nine questions.")
-print("First the day.")
 print("Is your birth day in this set of numbers?")
 print(set5)
 answer = input("Enter (Y)es or (N)o: ")
@@ -68,7 +57,6 @@ if "y" in answer:
 
 
 print("Now for the month")
-
 print("Is your birth month in this set?")
 print(monthSet1)
 answer = input("Enter (Y)es or (N)o: ")
